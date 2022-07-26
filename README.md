@@ -1,6 +1,6 @@
 # georgebjork.github.io
 
-# ForeScore
+# Try ForeScore Here
 
 All ForeScore documentation and code is found here: https://github.com/georgebjork/app-ForeScore
 
