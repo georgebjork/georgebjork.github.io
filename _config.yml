@@ -60,7 +60,7 @@ analytics:
     id: # fill in your GoatCounter ID
   umami:
     id: "3ef04311-d1a7-435d-8e90-54caf622e973"
-    domain: "https://georgebjork.com"
+    domain: "https://cloud.umami.is"
   matomo:
     id: # fill in your Matomo ID
     domain: # fill in your Matomo domain
