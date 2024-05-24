@@ -7,7 +7,7 @@ image:
   path: /images/2024-5-23-tailwindcss+aspnet/header1.png
 ---
 
-By default, an ASP.NET project comes with Bootstrap 5 pre-installed. Bootstrap is a great way to get a clean UI (with dark mode) right out of the box. However, some projects require some more flexibility than what Bootstrap can offer. Here is how you can get Tailwind set up in your ASP.NET project.
+By default, an ASP.NET project comes with bootstrap 5 pre-installed. Bootstrap is a great way to get a clean UI (with dark mode) right out of the box. However, some projects require more flexibility than what bootstrap can offer. Here is how you can get tailwind set up in your ASP.NET project.
 
 NOTE: This tutorial assumes you already have basic knowledge of creating and running ASP.NET apps.
 
@@ -23,7 +23,7 @@ To create our project run this in our project directory.
 dotnet new mvc -n aspnet-tailwind
 ```
 
-Run our project with to test to make sure everything is working.
+Now, run our project to make sure everything is working properly.
 ```
 dotnet run
 ```
@@ -39,7 +39,7 @@ In our project directory, run:
 npm init -y
 ```
 
-You should see the package.json file.
+You should see the package.json file appear, and this output in our terminal:
 ```
 Wrote to {your-path}\aspnet-tailwind\package.json:
 
@@ -57,26 +57,26 @@ Wrote to {your-path}\aspnet-tailwind\package.json:
 }
 ```
 
-Now, run this command:
+Now, run this command to install the tailwind package:
 ```
 npm install -D tailwindcss
 ```
 
-And add this script to our package.json:
+Then, add this script to our package.json:
 ```
 "scripts": {
   "css:build": "npx tailwindcss -i ./wwwroot/css/site.css -o ./wwwroot/css/styles.css --minify"
  }
 ```
-This command will be called to build all of our tailwind styles.
+This command will be called to build all of our tailwind styles with the command `css:build`.
 
 Now, we need to create our tailwind config file. To do so, run this command:
 ```
 npx tailwindcss init
 ```
-Now we should see a tailwind.config.js in our project root directory. 
+We should see a tailwind.config.js file appear in our project directory. 
 
-In that file, overwrite "module.exports = {..." with:
+In that file, overwrite `module.exports = {...` with:
 
 ```
 module.exports = {
@@ -91,7 +91,7 @@ module.exports = {
 }
 ```
 
-What this does is tell tailwind at which directories should it build its css from. So in this case, it will look in the Pages and View folders for anything with a .cshtml ending. If you are using `Areas`, then you will also need them for this also. 
+This code tells tailwind which directories and files should it build its css file from. So in this case, it will look in the Pages and View folders for anything with a .cshtml ending. If you are using `Areas`, then you will need to add this block of code also: 
 
 ```
 './Areas/**/Views/**/*.cshtml',
@@ -107,7 +107,7 @@ Now, let's move to our `wwwroot/css`. Remove all code inside of it and replace i
 @tailwind utilities;
 ```
 
-Afterwards, move to your `.csproj` file and add:
+Afterwards, move to your `.csproj` file and add this code block inside our `<Project Sdk="Microsoft.NET.Sdk.Web">` tag:
 
 ```
 <ItemGroup>
@@ -122,14 +122,14 @@ Afterwards, move to your `.csproj` file and add:
 
 This final line will run our `css:build` command we added earlier in our package.json.
 
-Finally, we can add this to our `_Layout.cshtml`. You will want to add this to any other `_Layouts.cshtml`'s you may have in our project.
+Finally, we want to add our stylesheet to our base `_Layout.cshtml`. You will want to add this to any other `_Layouts.cshtml`'s you may have in our project.
 
 ```
 <link rel="stylesheet" href="~/css/styles.css" asp-append-version="true" />
 ```
 
 ## Removing Bootstrap
-Now that all of the tailwind is added, we want to now remove any and all Bootstrap that came with the project.
+Now that all of the tailwind is added, we want to now remove any and all bootstrap that came with the project.
 
 ### Place 1: wwwroot
 
@@ -139,7 +139,7 @@ In our wwwroot/lib you should see a bootstrap folder. Feel free to delete that f
 
 ### Place 2: _Layout.cshtml
 
-In our `_Layout.cshtml` you should see places at the top and bottom of your page. Refer to the images below of what to remove:
+In our `_Layout.cshtml` you should see places at the top and bottom of your page. Refer to the crossed our sections in the images below to know what to remove:
 
 ![Place 2](/images/2024-5-23-tailwindcss+aspnet/boostrap-place2.png)
 _In your header_
@@ -149,9 +149,9 @@ _In your script tags_
 
 ## Adding Tailwind Code
 
-Now that tailwind is added and bootstrap is removed. Lets change our `_Layout.cshtml` and a view to test this.
+Now that tailwind is added and bootstrap is removed. Lets change our `_Layout.cshtml` and a view to test out tailwind.
 
-In our `Layout.cshtml`, replace this default code:
+In our `Layout.cshtml`, replace this default code inside the `<body>` tags:
 
 ```
 <header>
@@ -229,7 +229,7 @@ Now with everything installed and added, running
 dotnet run
 ```
 
-should yield us this screen:
+should show us this screen:
 
 ![Final Product](/images/2024-5-23-tailwindcss+aspnet/tailwind-final.png)
 _Our final product_
@@ -296,7 +296,4 @@ With that added, run our project and we should see this now!
 ![Final Product](/images/2024-5-23-tailwindcss+aspnet/daisyui-final.png)
 _daisyui final product_
 
-
-## Conclusion
-
-And just like that, we have added tailwindcss and daisyui to our ASP.NET application!
+And just like that, we have added tailwind and daisyui to our ASP.NET application!
