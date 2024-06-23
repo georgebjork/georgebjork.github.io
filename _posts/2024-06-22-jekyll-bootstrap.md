@@ -7,7 +7,7 @@ image:
   path: /images/2024-06-22-jekyll-bootstrap/jekyll-logo.png
 ---
 
-Recently, I was wanting to migrate a [webapp](https://github.com/georgebjork/LeviathanRipBlog) I had built to a static website. This never needed to be a webapp, and was totally overengineered for what it did. However, it was fun and it worked great. But, I don't want to pay the 5 bucks to host it anymore for the usage it got.
+Recently, I wanted to migrate a [webapp](https://github.com/georgebjork/LeviathanRipBlog) I had built to a [static](https://github.com/georgebjork/LeviathanRipBlog-Static) website. This never needed to be a webapp, and was totally overengineered for what it did. However, it was fun and it worked great. But, I don't want to pay the 5 bucks to host it anymore for the usage it got.
 
 Enter Jekyll. Jekyll is something that had been on my radar for a while, and something I wanted to dip my toes into. I first started with this website, and getting this template up and running. After seeing how powerful Jekyll and static sites were, I decided to go head first into migrating my webapp to it.
 
